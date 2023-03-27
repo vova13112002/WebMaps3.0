@@ -1,0 +1,65 @@
+html,
+body {
+
+	overflow-x: hidden;
+
+	background-color: #eee;
+  
+  
+	font-family: 'Roboto', sans-serif;
+	// background-color: var(--var-bgcolor);
+	// color: var(--var-fontcolor);
+	font-size: 18px;
+	
+	background: #303030;
+	color: #fff;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+
+.container{
+  max-width: 1640px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container__deliver{
+	max-width: 1640px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+
+//стилізація скрола
+
+/* Работает в Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #eee #303030;
+  }
+  
+  /* Работает в Chrome, Edge и Safari */
+  *::-webkit-scrollbar {
+	width: 15px;
+  }
+  
+  *::-webkit-scrollbar-track {
+	background: #303030;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+	background-color: #eee;
+	border-radius: 30px;
+	border: 3px solid #303030;
+  }
+
