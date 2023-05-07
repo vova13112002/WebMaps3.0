@@ -393,7 +393,30 @@ function changeTheme(isChecked) {
   //   nav.classList.toggle('nav--visible');
   // });
 
-  const burger = document?.querySelector('[data-burger]');
+//   const burger = document?.querySelector('[data-burger]');
+// const nav = document?.querySelector('[data-nav]');
+// const navItems = nav?.querySelectorAll('a');
+// const body = document.body;
+// const header = document?.querySelector('.header');
+// const headerHeight = header.offsetHeight;
+// console.log(headerHeight)
+// document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
+
+// burger?.addEventListener('click', () => {
+//   body.classList.toggle('stop-scroll');
+//   burger?.classList.toggle('burger--active');
+//   nav?.classList.toggle('nav--visible');
+// });
+
+// navItems.forEach(el => {
+//   el.addEventListener('click', () => {
+//     body.classList.remove('stop-scroll');
+//   burger?.classList.remove('burger--active');
+//   nav?.classList.remove('nav--visible');
+//   });
+// });
+
+const burger = document?.querySelector('[data-burger]');
 const nav = document?.querySelector('[data-nav]');
 const navItems = nav?.querySelectorAll('a');
 const body = document.body;
@@ -416,4 +439,25 @@ navItems.forEach(el => {
   });
 });
 
+let scrollTop;
+let bodyStyleOverflow;
 
+// функція для відключення прокручування
+function disableScroll() {
+  scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  bodyStyleOverflow = document.body.style.overflow;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollTop}px`;
+  document.body.style.width = '100%';
+  document.body.style.overflow = 'hidden';
+}
+
+
+// функція для відновлення прокручування
+function enableScroll() {
+document.body.style.position = '';
+document.body.style.top = '';
+document.body.style.width = '';
+document.body.style.overflow = bodyStyleOverflow;
+window.scrollTo(0, scrollTop);
+}

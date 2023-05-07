@@ -554,7 +554,7 @@ input:checked + .slider::after {
   padding: 0;
   background-color: transparent;
   margin-top: 5px;
-  z-index: 100000;
+  // z-index: 100000;
 }
 .burger__line {
   position: absolute;
@@ -680,17 +680,17 @@ text-align: center;
   
       position: fixed;
       top: 0;
-      z-index: 999;
+      // z-index: 999;
       padding: 30px;
       transform: translateY(-150%);
       transition: transform 0.6s ease-in-out;
-  
+      height: 100%;
       overflow-y: auto;
       display: block;
       left: 0;
       right: 0;
       background: #303030;
-      height: calc(100vh - var(--header-height));
+      // height: calc(100vh - var(--header-height));
     }
   
     .earth__title {
@@ -785,6 +785,7 @@ margin-bottom: 75px;
   .map__inner{
     display: flex;
     justify-content: center;
+    text-align: center; 
   }
 }
 .nav--visible{
