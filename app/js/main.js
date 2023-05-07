@@ -420,12 +420,14 @@ const burger = document?.querySelector('[data-burger]');
 const nav = document?.querySelector('[data-nav]');
 const navItems = nav?.querySelectorAll('a');
 const body = document.body;
+const html = document?.querySelector('[data-html');//
 const header = document?.querySelector('.header');
 const headerHeight = header.offsetHeight;
 console.log(headerHeight)
 document.querySelector(':root').style.setProperty('--header-height', `${headerHeight}px`);
 
 burger?.addEventListener('click', () => {
+  html.classList.toggle('stop-scroll');
   body.classList.toggle('stop-scroll');
   burger?.classList.toggle('burger--active');
   nav?.classList.toggle('nav--visible');
@@ -433,31 +435,10 @@ burger?.addEventListener('click', () => {
 
 navItems.forEach(el => {
   el.addEventListener('click', () => {
+    html.classList.toggle('stop-scroll');
     body.classList.remove('stop-scroll');
   burger?.classList.remove('burger--active');
   nav?.classList.remove('nav--visible');
   });
 });
 
-let scrollTop;
-let bodyStyleOverflow;
-
-// функція для відключення прокручування
-function disableScroll() {
-  scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  bodyStyleOverflow = document.body.style.overflow;
-  document.body.style.position = 'fixed';
-  document.body.style.top = `-${scrollTop}px`;
-  document.body.style.width = '100%';
-  document.body.style.overflow = 'hidden';
-}
-
-
-// функція для відновлення прокручування
-function enableScroll() {
-document.body.style.position = '';
-document.body.style.top = '';
-document.body.style.width = '';
-document.body.style.overflow = bodyStyleOverflow;
-window.scrollTo(0, scrollTop);
-}
