@@ -418,7 +418,7 @@ function changeTheme(isChecked) {
 
 const burger = document?.querySelector('[data-burger]');
 const nav = document?.querySelector('[data-nav]');
-const navItems = nav?.querySelectorAll('a');
+const navItems = nav?.querySelectorAll('.menu__list-link');
 const body = document.body;
 const html = document?.querySelector('[data-html');//
 const header = document?.querySelector('.header');
@@ -435,10 +435,11 @@ burger?.addEventListener('click', () => {
 
 navItems.forEach(el => {
   el.addEventListener('click', () => {
-    html.classList.toggle('stop-scroll');
+    html.classList.remove('stop-scroll');
     body.classList.remove('stop-scroll');
   burger?.classList.remove('burger--active');
   nav?.classList.remove('nav--visible');
   });
 });
+
 
